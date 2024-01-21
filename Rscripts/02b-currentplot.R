@@ -31,7 +31,7 @@ load_data <- function() {
 # Function to set simulation parameters
 set_simulation_parameters <- function() {
   time_steps <- 391
-  num_paths <- 1000
+  num_paths <- 10000
   set.seed(12012024)
   list(time_steps = time_steps, num_paths = num_paths)
 }
@@ -126,8 +126,8 @@ generate_snapshot <-
       arrange(last_price)
     
     # Select the bottom 10 and top 10 paths
-    bottom_10_paths <- sorted_paths$path[1:10]
-    top_10_paths <- sorted_paths$path[(num_paths-9):num_paths]
+    bottom_10_paths <- sorted_paths$path[1:100]
+    top_10_paths <- sorted_paths$path[(num_paths-99):num_paths]
     
     # Calculate the average for each time step for bottom and top 10 paths
     bottom_10_avg <- price_df %>% 
